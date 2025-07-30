@@ -1,0 +1,51 @@
+---
+export interface Props {
+  title: string;
+  excerpt: string;
+  image: string;
+  url: string;
+  date: string;
+  category: string;
+  readingTime: string;
+}
+
+const { title, excerpt, image, url, date, category, readingTime } = Astro.props;
+---
+
+<article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+  <div class="aspect-video overflow-hidden">
+    <img
+      src={image}
+      alt={title}
+      class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+      loading="lazy"
+    />
+  </div>
+  
+  <div class="p-6">
+    <div class="flex items-center text-sm text-gray-500 mb-2">
+      <span class="bg-primary-100 text-primary-700 px-2 py-1 rounded-full text-xs font-medium mr-3">
+        {category}
+      </span>
+      <time datetime={date}>{new Date(date).toLocaleDateString()}</time>
+      <span class="mx-2">•</span>
+      <span>{readingTime}</span>
+    </div>
+    
+    <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-primary-600 transition-colors">
+      <a href={url}>{title}</a>
+    </h3>
+    
+    <p class="text-gray-600 mb-4 line-clamp-3">{excerpt}</p>
+    
+    <a
+      href={url}
+      class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium transition-colors"
+    >
+      Read More
+      <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </a>
+  </div>
+</article>
