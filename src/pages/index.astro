@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BlogCard from '../components/BlogCard.astro';
+import AffiliateButton from '../components/AffiliateButton.astro';
+---
+
+<Layout title="Blicksel Picks - Amazon Product Reviews & Recommendations">
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 to-accent-50 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            Discover the Best
+            <span class="text-primary-600">Amazon Products</span>
+          </h1>
+          <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Honest reviews, detailed comparisons, and expert recommendations 
+            to help you make the perfect purchase every time.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/blog" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+              Browse Reviews
+            </a>
+            <a href="/categories" class="bg-white hover:bg-gray-50 text-primary-600 px-8 py-3 rounded-lg font-semibold border-2 border-primary-600 transition-colors">
+              Shop by Category
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Featured Products -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Products</h2>
+          <p class="text-gray-600">Our top picks this month</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Featured Product 1 -->
+          <div class="bg-gray-50 rounded-lg p-6 text-center">
+            <img 
+              src="https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg" 
+              alt="Wireless Headphones" 
+              class="w-full h-48 object-cover rounded-lg mb-4"
+              loading="lazy"
+            />
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Premium Wireless Headphones</h3>
+            <p class="text-gray-600 mb-4">Crystal clear sound quality with 30-hour battery life</p>
+            <div class="text-2xl font-bold text-accent-600 mb-4">$129.99</div>
+            <AffiliateButton url="https://amazon.com/dp/example1" text="Check on Amazon" />
+          </div>
+          
+          <!-- Featured Product 2 -->
+          <div class="bg-gray-50 rounded-lg p-6 text-center">
+            <img 
+              src="https://images.pexels.com/photos/4498479/pexels-photo-4498479.jpeg" 
+              alt="Smart Home Device" 
+              class="w-full h-48 object-cover rounded-lg mb-4"
+              loading="lazy"
+            />
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Smart Home Hub</h3>
+            <p class="text-gray-600 mb-4">Control all your smart devices from one place</p>
+            <div class="text-2xl font-bold text-accent-600 mb-4">$89.99</div>
+            <AffiliateButton url="https://amazon.com/dp/example2" text="View Deal" />
+          </div>
+          
+          <!-- Featured Product 3 -->
+          <div class="bg-gray-50 rounded-lg p-6 text-center">
+            <img 
+              src="https://images.pexels.com/photos/3945681/pexels-photo-3945681.jpeg" 
+              alt="Fitness Tracker" 
+              class="w-full h-48 object-cover rounded-lg mb-4"
+              loading="lazy"
+            />
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Fitness Tracker Pro</h3>
+            <p class="text-gray-600 mb-4">Track your health and fitness goals with precision</p>
+            <div class="text-2xl font-bold text-accent-600 mb-4">$199.99</div>
+            <AffiliateButton url="https://amazon.com/dp/example3" text="Shop Now" />
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Latest Blog Posts -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Latest Reviews</h2>
+          <p class="text-gray-600">Stay updated with our newest product reviews and guides</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <BlogCard
+            title="Best Wireless Earbuds Under $100"
+            excerpt="We tested 15 different wireless earbuds to find the best options that won't break the bank."
+            image="https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg"
+            url="/blog/best-wireless-earbuds-under-100"
+            date="2024-01-15"
+            category="Electronics"
+            readingTime="8 min read"
+          />
+          <BlogCard
+            title="Smart Home Starter Kit: Complete Guide"
+            excerpt="Everything you need to know about setting up your first smart home automation system."
+            image="https://images.pexels.com/photos/4498479/pexels-photo-4498479.jpeg"
+            url="/blog/smart-home-starter-guide"
+            date="2024-01-12"
+            category="Home & Garden"
+            readingTime="12 min read"
+          />
+          <BlogCard
+            title="Top 10 Fitness Gadgets for 2024"
+            excerpt="The latest fitness technology to help you reach your health goals this year."
+            image="https://images.pexels.com/photos/3945681/pexels-photo-3945681.jpeg"
+            url="/blog/top-fitness-gadgets-2024"
+            date="2024-01-10"
+            category="Health & Fitness"
+            readingTime="10 min read"
+          />
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="/blog" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+            View All Reviews
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Categories Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Shop by Category</h2>
+          <p class="text-gray-600">Find the perfect products in your favorite categories</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <a href="/categories/electronics" class="group bg-gray-50 hover:bg-primary-50 rounded-lg p-6 text-center transition-colors">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">Electronics</h3>
+          </a>
+          
+          <a href="/categories/home-garden" class="group bg-gray-50 hover:bg-primary-50 rounded-lg p-6 text-center transition-colors">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">Home & Garden</h3>
+          </a>
+          
+          <a href="/categories/health-beauty" class="group bg-gray-50 hover:bg-primary-50 rounded-lg p-6 text-center transition-colors">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">Health & Beauty</h3>
+          </a>
+          
+          <a href="/categories/sports-outdoors" class="group bg-gray-50 hover:bg-primary-50 rounded-lg p-6 text-center transition-colors">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">Sports & Outdoors</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
